@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    background: rgb(88,91,92);
+    background: radial-gradient(circle, rgba(88,91,92,1) 0%, rgba(24,24,25,1) 100%);
+}
+
+h1{
+    text-align: center;
+    color:rgb(155, 245, 170);
+    font-size: 40px;
+    margin:20px 200px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(80, 241, 5);
+}
+#imgSlider{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 90px;
+    box-sizing: border-box;
+}
+
+
+.imgs img{
+    width:800px;
+    height:500px;
+    border-radius: 20px;
+    border-radius: 20px;
+    animation-name: ledImageShadow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    box-sizing: border-box;
+}
+.arrow{
+    text-align: center;
+    padding:0 100px;
+}
+
+.arrow i{
+    color:rgb(122, 230, 33);
+    font-size: 70px;
+    cursor: pointer;
+    opacity: 0.6;
+    
+}
+.arrow i:hover{
+    opacity: unset;
+}
+
+@keyframes ledImageShadow{
+    0%{
+        box-shadow: 0 0 50px 2px rgb(217, 255, 0);
+    }
+    30%{
+        box-shadow: 0 0 50px 2px rgb(145, 255, 0);
+    }
+    60%{
+        box-shadow: 0 0 50px 2px rgb(1, 255, 234);
+    }
+    100%{
+        box-shadow: 0 0 50px 2px rgb(132, 0, 255);
+    }
+}

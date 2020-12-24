@@ -1,0 +1,29 @@
+<!-- Write HTML and CSS code to design a web page displaying list of hyperlinks. Divide the browser screen into two frames.
+The first frame will display the heading. Divide the second frame into two columns. The frame on the left will be a menu
+consisting of hyperlinks. Clicking on any one of these hyperlinks will display related information as a new page which
+must be open in frame on the right hand side.
+Use Inline style sheet with appropriate attributes to display information of each frame. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Industries in INDIA</title>
+</head>
+<!-- <frameset rows="30%,*">
+    <frame src="title.html" frameborder="0">
+    <frameset cols="50%,*">
+        <frame src="cities.HTML">
+        <frame src="choice.html"  name="choice">
+    </frameset>
+</frameset> -->
+    <frameset rows="40%,*">
+        <frame src="title.html">
+        <frameset cols="50%,*">
+            <frame src="cities.html">
+            <frame name="choice">
+        </frameset>
+    </frameset>
+    
+</html>
