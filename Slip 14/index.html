@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculate Net Salary</title>
+    <style>
+    label{
+        display:inline-block;
+        width: 150px;
+    }
+        #submit{
+            padding:10px 20px;
+            margin-top:20px;
+        }
+        .main-wrapper{
+            display:flex;
+            justify-content:space-around;
+        }
+        .main-wrapper div{
+            width:50%
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div>
+        <h1>Pay Slip</h1>
+        <label for="name">Name of Employee:</label>
+        <input type="text" id="name" name="name"><br/>
+
+        <label for="department">Department: 
+        </label>
+        <input type="text" id="department" name="department"><br/>
+
+        <label for="designation">Designation: 
+        </label>
+         <input type="text" id="designation" name="designation"><br/>
+
+        <label for="salary">Basic Salary: 
+        </label>
+        <input type="text" id="salary" name="salary"><br/>
+
+        <label for="HRA">HRA: 
+        </label>
+        <input type="text" id="hra" name="HRA"><br/>
+
+        <label for="da">DA: 
+        </label>
+        <input type="text" id="da" name="da"><br/>
+
+        <button id="submit">Submit</button>
+        </div>
+
+        <div class="show">
+            <h1 id="empName">Name: <span></span></h1>
+            <h4 id="netSal">Net Salary : <span></span></h4>
+        </div>
+        
+    </div>
+    <script type="text/javascript" >
+        
+        
+
+        //bs+hra+da;
+        var submit = document.getElementById('submit');
+
+        submit.onclick = function(){
+            var name = document.getElementById("name").value;
+            var sal = Number(document.getElementById("salary").value);
+        
+            var hra = Number(document.getElementById('hra').value);
+            var da = Number(document.getElementById('da').value);
+    
+            
+            var total = sal+ sal * hra/100 + sal * da/100;
+            document.getElementById('empName').innerHTML = 'Name: <span>'+name+'</span>'
+            document.getElementById('netSal').innerHTML = 'Net Salary : <span>'+total+'</span>'
+        
+        }
+
+    </script>
+</body>
+</html>
