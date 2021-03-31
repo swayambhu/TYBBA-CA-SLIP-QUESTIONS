@@ -4,18 +4,16 @@
     <title>Slip no 4</title>
     <script language="javascript">
         function fact(){
-            var i;
             var n = document.f1.txtNo.value;
             var s = [];
             document.write("Factors are: ");
-            for(i=1; i<=n/2;i++){
+            for(var i=1; i<=n;i++){
                 if(n % i === 0){
                     s.push(i);
                 }
             }
             document.write(s)
         }
-        
     </script>
 </head>
 <body>

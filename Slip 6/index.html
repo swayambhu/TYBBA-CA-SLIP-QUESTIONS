@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <label for="string">Enter the String : </label>
+    <input type="text" name="string" id="string"><br/>
+
+    <input type="radio" name="position" class="position">Accept the character from the user and count it's occurance <br>
+
+    <input type="radio" name="position" class="position">Print the character at the particular position<br>
+
+    <button id="submit" onclick="showResult()">Submit</button>
+
+    <script>
+        function showResult(){
+            var radioBtn = document.getElementsByClassName('position');
+            
+            if(radioBtn[0].checked){
+                // Accept the character from the user and count it's occurance
+                var mStr =  document.getElementById('string').value;
+                var userInput = prompt('Enter Character');
+                var count = 0;
+                for(var i=0; i < mStr.length; i++){
+                    if(userInput.toLowerCase() === mStr[i].toLowerCase()){
+                        count++
+                    }
+                }
+                alert("Count of '"+userInput+"' is "+count)
+                
+            }else if(radioBtn[1].checked){
+                //Print the character at the particular position
+                var mStr =  document.getElementById('string').value;
+                var userInput = prompt('Enter index');
+                alert("The character at index "+userInput+" is "+mStr[userInput])
+            }
+        }
+    </script>
+</body>
+</html>

@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <script src="https://kit.fontawesome.com/92aa46a256.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Image Slider</title>
@@ -13,6 +12,7 @@
     <h1>Image Slider</h1>
     <div id="imgSlider">
         <div class="arrow">
+            
             <i class="fas fa-chevron-circle-left prev" onclick="show_image('prev')"></i>
         </div>
         <div class="imgs">
@@ -39,11 +39,13 @@
             }
             else {
                 index++;
-                index %= images.length;
             }
 
-            if (index < 0) {
-                index = images.length - 1;
+            if(index >images.length -1) {
+                index = 0
+            }
+            if(index < 0){
+                index = images.length -1
             }
 
             the_image.src = images[index];
@@ -52,4 +54,4 @@
     
 </body>
 </html>
-9872221779
+
