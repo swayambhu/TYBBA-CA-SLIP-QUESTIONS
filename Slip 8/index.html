@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: inline-block;
+            width:150px;
+            text-align: right;
+        }
+        .t-box{
+            margin-bottom: 10px;
+        }
+
+        .btn{
+            margin-left: 10px;
+        }
+        /* .t-label{
+            width: 150px;
+            display: inline-block;
+            text-align: right;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+        .t-box{
+            width: 150px;
+        } */
+    </style>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form onsubmit="return checkValidations()">
+
+        <label for="name">Student Name:</label>
+        <!-- <input type="text" name="std_name" id="name" class="t-box" onkeypress="return ('Key'+event.key) === event.code" required> <br/> -->
+        <input type="text" name="std_name" id="name" class="t-box" pattern="[A-Z a-z]{0,33}" title="Name shouldn't contain any digit" required> <br/>
+
+
+        <label for="mobileNo">Mobile No:</label>
+        <input type="number" name="mobileNo" id="mobileNo" class="t-box" required><br/>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" class="t-box" required><br/>
+
+        <label for="city">City :</label>
+        <input type="text" name="city" id="city" class="t-box" required><br/>
+
+        <label for="state">State</label>
+        <input type="text" name="state" id="state" class="t-box" required><br/>
+
+        <label for="pincode">Pincode : </label>
+        <input type="number" name="pincode" id="pincode" class="t-box" required><br/>
+
+        <input class="btn" type="submit" value="Submit">
+        <input class="btn" type="reset" value="Reset">
+    </form>
+
+    <script>
+        function checkValidations(){
+            var mob = document.getElementById('mobileNo').value
+            var pin = document.getElementById('pincode').value
+            console.log(mob.length==10)
+            if(mob.length !==10){
+                alert("Mobile number should be of 10 digits")
+                return false
+            }
+
+            if(pin.length !==6){
+                alert("Pincode should be of 6 digits")
+                return false
+            }
+            return alert("Form Submitted")
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <h1>Student Registration Form</h1>
+    <form onsubmit="return validateForm()">
+        <label for="name" class="t-label">Name of Student : </label>
+        <input type="text" name="name" id="name" class="t-box" required  onkeypress="return ('Digit'+event.key !== event.code)"><br/>
+
+        <label for="mobileNo" class="t-label">Mobile No : </label>
+        <input type="number" name="mobileNo" id="mobileNo" class="t-box" onkeypress="return checkLength(event)" required><br/>
+
+        <label for="address" class="t-label">Address Line : </label>
+        <input type="text" name="address" id="address" class="t-box" required><br/>
+
+        <label for="city" class="t-label">City : </label>
+        <input type="text" name="city" id="city" class="t-box" required ><br/>
+
+        <label for="state" class="t-label">State : </label>
+        <input type="text" name="state" id="state" class="t-box" required ><br/>
+
+        <label for="pincode" class="t-label">Pincode : </label>
+        <input type="number" name="pincode" id="pincode" class="t-box" required onkeypress="return checkLength(event)"><br/>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <script>
+        
+        
+        function checkLength(event){
+            
+            var mob = document.getElementById('mobileNo');
+            var pincode = document.getElementById('pincode');
+            console.log(event.path[0].id)
+            if(event.path[0].id === mob.id){
+                return mob.value.length < 10 
+            }
+            if(event.path[0].id === pincode.id){
+                return pincode.value.length < 6
+            }
+                         
+        }
+
+        function validateForm(){
+            var mob = document.getElementById('mobileNo').value;
+            var pincode = document.getElementById('pincode').value;
+            if(mob.length !== 10){
+                alert("Mobile Number should be of 10 digits")
+                return false
+            }if(pincode.length !== 6){
+                alert("Pincode should be of 6 digits")
+                return false   
+            }
+        }
+    </script> -->
+
+</body>
+</html>
