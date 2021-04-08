@@ -30,10 +30,21 @@
         
 
         <label for="pan">Pan Number : </label>
-            <input type="text" name="pan" id="pan"><br/>
-        
+            <input type="text" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}"    name="pan" title="pan number is of only 10 characters long, out of which first 5  characters are alphabets, next 4  characters are digits and last character is alphabet " id="pan"><br/>
+            <input type="text"  name="pan" id="pan"><br/>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="validate()">
     </form>
+
+    <!-- <script>
+    function validate()
+    {
+        p = document.getElementById("pan").value;
+        if(!p.match(/^([\w]{5}) (\d{4}) ([\w]{1}$)/))
+            alert("Invalid");
+        else
+            alert("valid");
+    } -->
+</script>
 </body>
 </html>
